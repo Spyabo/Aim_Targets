@@ -1,0 +1,110 @@
+.App {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #282c34;
+  color: white;
+}
+
+.playarea {
+  display: grid;
+  height: 85%;
+  width: 85%;
+  grid-template-areas: "targetarea sidebar";
+  grid-template-columns: 80% auto;
+  grid-template-rows: 100% auto;
+}
+
+#targetarea {
+  outline: 2px solid black;
+  grid-area: targetarea;
+  background-color: #1b1b1a;
+}
+
+.target {
+  position: relative;
+  top: auto;
+  left: auto;
+  border: none;
+  cursor: pointer;
+  appearance: none;
+  background-color: inherit;
+  width: auto;
+  height: auto;
+  border-radius: 50%;
+}
+
+#StartScreen {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(29, 233, 10, 0.719);
+  font-size: 3rem;
+  font-weight: bold;
+  -webkit-text-stroke: 1.5px #000000;
+  flex-direction: column;
+}
+
+#GameOver {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  color: black;
+  background-color: rgba(230, 14, 14, 0.719);
+  font-size: 3rem;
+  font-weight: bold;
+  flex-direction: column;
+}
+
+.Username-form {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 50%;
+}
+
+.Input-name {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid black;
+  outline: 0;
+  font-size: 1.3rem;
+  color: black;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+
+.Username {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1.2rem;
+  color: black;
+}
+
+#description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+
+#description-h2 {
+  font-size: 3rem;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  text-align: left;
+  margin-left: 5%;
+}
