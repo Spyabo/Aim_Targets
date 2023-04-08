@@ -1,4 +1,10 @@
+import { useEffect } from "react";
+
 const TopScores = ({ highScores }) => {
+  useEffect(() => {
+    localStorage.setItem("highScores", JSON.stringify(highScores));
+  }, [highScores]);
+
   return (
     <div>
       {highScores.length > 0

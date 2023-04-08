@@ -5,7 +5,10 @@ import TargetArea from "./TargetArea";
 const PlayArea = () => {
   const [score, setScore] = useState(0);
   const [health, setHealth] = useState(3);
-  const [highScores, setHighscore] = useState([]);
+  const [highScores, setHighscore] = useState(() => {
+    const highScores = localStorage.getItem("highScores");
+    return highScores ? JSON.parse(highScores) : [];
+  });
 
   return (
     <div className="playarea">
