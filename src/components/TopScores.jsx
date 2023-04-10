@@ -3,7 +3,7 @@ import { useEffect } from "react";
 const TopScores = ({ highScores }) => {
   useEffect(() => {
     if (highScores.length >= 10) {
-      highScores.length = 9;
+      highScores.length = 10;
     }
     localStorage.setItem("highScores", JSON.stringify(highScores));
   }, [highScores]);
