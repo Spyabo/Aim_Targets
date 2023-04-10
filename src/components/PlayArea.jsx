@@ -7,7 +7,8 @@ const PlayArea = () => {
   const [health, setHealth] = useState(3);
   const [highScores, setHighscore] = useState(() => {
     const highScores = localStorage.getItem("highScores");
-    return highScores ? JSON.parse(highScores) : [];
+
+    return highScores ? JSON.parse(highScores).slice(0, 10) : [];
   });
 
   return (
