@@ -2,15 +2,18 @@ import { useEffect } from "react";
 import TopScores from "./TopScores";
 
 let intervalTime = 1500;
+
 const Sidebar = ({ score, setScore, health, setHealth, highScores }) => {
   if (score > 0 && score % 10 === 0) {
     intervalTime -= 100;
   }
+
   useEffect(() => {
     if (score > 0) {
       const lives = setInterval(() => {
         setHealth((health) => health - 1);
       }, intervalTime);
+
       if (health === 0) {
         clearInterval(lives);
       }
