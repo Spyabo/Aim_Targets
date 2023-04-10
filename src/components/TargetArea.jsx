@@ -10,9 +10,10 @@ const TargetArea = ({ score, setScore, health, setHighscore }) => {
     return Math.random() * (max - min) + min;
   };
 
-  let size = getRandomArbitrary(10, 13);
+  let size;
 
   const sizeRanges = [
+    { scoreRange: [0, 10], sizeRange: [10, 12] },
     { scoreRange: [10, 20], sizeRange: [9, 11] },
     { scoreRange: [20, 30], sizeRange: [8, 11] },
     { scoreRange: [30, 40], sizeRange: [7, 10] },
