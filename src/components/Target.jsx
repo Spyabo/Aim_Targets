@@ -1,7 +1,11 @@
+import useSound from "use-sound";
 import { ReactComponent as ReactLogo } from "../svg/target.svg";
+import hitSound from "../wav/hit.wav";
 
 const Target = ({ values, onClick }) => {
   const { x, y, size } = values;
+
+  const [playHit] = useSound(hitSound, { volume: 0.05 });
 
   return (
     <button
@@ -9,6 +13,7 @@ const Target = ({ values, onClick }) => {
       type="button"
       style={{ left: `${x}%`, top: `${y}%` }}
       onClick={onClick}
+      onMouseDown={() => playHit()}
     >
       <ReactLogo style={{ width: `${size}vb`, height: `${size}vb` }} />
     </button>
