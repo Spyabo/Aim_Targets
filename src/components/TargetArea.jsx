@@ -12,15 +12,23 @@ const TargetArea = ({ score, setScore, health, setHighscore }) => {
 
   let size = getRandomArbitrary(10, 13);
 
-  if (score >= 10 && score < 20) size = getRandomArbitrary(9, 11);
-  if (score >= 20 && score < 30) size = getRandomArbitrary(8, 11);
-  if (score >= 30 && score < 40) size = getRandomArbitrary(7, 10);
-  if (score >= 40 && score < 50) size = getRandomArbitrary(6, 9);
-  if (score >= 50 && score < 60) size = getRandomArbitrary(5, 8);
-  if (score >= 60 && score < 70) size = getRandomArbitrary(4, 7);
-  if (score >= 70 && score < 80) size = getRandomArbitrary(3, 6);
-  if (score >= 80 && score < 90) size = getRandomArbitrary(2.5, 5);
-  if (score >= 90 && score < 100) size = getRandomArbitrary(2.5, 4);
+  const sizeRanges = [
+    { scoreRange: [10, 20], sizeRange: [9, 11] },
+    { scoreRange: [20, 30], sizeRange: [8, 11] },
+    { scoreRange: [30, 40], sizeRange: [7, 10] },
+    { scoreRange: [40, 50], sizeRange: [6, 9] },
+    { scoreRange: [50, 60], sizeRange: [5, 8] },
+    { scoreRange: [60, 70], sizeRange: [4, 7] },
+    { scoreRange: [70, 80], sizeRange: [3, 6] },
+    { scoreRange: [80, 90], sizeRange: [2.5, 5] },
+    { scoreRange: [90, 100], sizeRange: [2.5, 4] },
+  ];
+
+  sizeRanges.forEach((range) => {
+    if (score >= range.scoreRange[0] && score < range.scoreRange[1]) {
+      size = getRandomArbitrary(range.sizeRange[0], range.sizeRange[1]);
+    }
+  });
 
   let x = getRandomArbitrary(0, 100 - size);
   let y = getRandomArbitrary(0, 96 - size);
