@@ -2,10 +2,10 @@ import { useEffect } from "react";
 
 const TopScores = ({ highScores }) => {
   useEffect(() => {
-    localStorage.setItem("highScores", JSON.stringify(highScores));
     if (highScores.length >= 10) {
-      highScores.length = 10;
+      highScores.length = 9;
     }
+    localStorage.setItem("highScores", JSON.stringify(highScores));
   }, [highScores]);
 
   return (
