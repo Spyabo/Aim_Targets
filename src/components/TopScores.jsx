@@ -16,6 +16,7 @@ const TopScores = ({ highScores }) => {
             .map((score, index) => {
               return <p key={index}>{`${score[0]} - ${score[1]}`}</p>;
             })
+            .slice(0, 10)
         : undefined}
     </div>
   );
