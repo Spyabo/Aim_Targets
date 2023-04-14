@@ -60,7 +60,7 @@ const TargetArea = ({ score, setScore, health, setHighscore }) => {
               />
             </div>
             <div>
-              <h2 id="description-h2">Welcome To Button Aimer!!!</h2>
+              <h2 id="description-h2">Welcome To Target Aimer!!!</h2>
               <p id="description">
                 Keep clicking the targets, if you're too slow you will lose a
                 life. Good Luck!
