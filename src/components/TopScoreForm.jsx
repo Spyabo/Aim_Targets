@@ -1,9 +1,17 @@
-const TopScoreForm = ({ score, name, setName, setHighscore }) => {
+import { useState } from "react";
+
+const TopScoreForm = ({ score, setHighscore }) => {
+  const [name, setName] = useState("");
+  const [toggle, setToggle] = useState(true);
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    setHighscore((currentScores) => {
-      return [...currentScores, [name, score]];
-    });
+    if (toggle) {
+      setToggle(false);
+      setHighscore((currentScores) => {
+        return [...currentScores, [name, score]];
+      });
+    }
   };
 
   return (

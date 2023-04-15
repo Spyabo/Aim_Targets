@@ -4,7 +4,6 @@ import TopScoreForm from "./TopScoreForm";
 
 const TargetArea = ({ score, setScore, health, setHighscore }) => {
   const [values, setTarget] = useState({ x: 0, y: 0, size: 10 });
-  const [name, setName] = useState("");
 
   const getRandomArbitrary = (min, max) => {
     return Math.random() * (max - min) + min;
@@ -71,12 +70,7 @@ const TargetArea = ({ score, setScore, health, setHighscore }) => {
       ) : (
         <div id="GameOver">
           <h1>Game Over</h1>
-          <TopScoreForm
-            setHighscore={setHighscore}
-            name={name}
-            setName={setName}
-            score={score}
-          />
+          <TopScoreForm setHighscore={setHighscore} score={score} />
         </div>
       )}
     </div>
